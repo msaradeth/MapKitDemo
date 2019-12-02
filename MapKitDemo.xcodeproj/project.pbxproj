@@ -25,6 +25,10 @@
 		0E9AF59B23942E0100F72B14 /* StoreAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9AF59923942E0100F72B14 /* StoreAnnotationView.swift */; };
 		0E9AF5A423944B7100F72B14 /* StoreCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9AF5A323944B7100F72B14 /* StoreCalloutView.xib */; };
 		0EF06D492394580900D6F71B /* StoreCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF06D482394580900D6F71B /* StoreCalloutView.swift */; };
+		0EF06D4C2394CEEC00D6F71B /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF06D4B2394CEEC00D6F71B /* PinAnnotation.swift */; };
+		0EF06D4E2394CF1100D6F71B /* CustomBusinessCallOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF06D4D2394CF1100D6F71B /* CustomBusinessCallOut.swift */; };
+		0EF06D502394CF4300D6F71B /* CalloutAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF06D4F2394CF4300D6F71B /* CalloutAnnotationView.swift */; };
+		0EF06D522394CF8C00D6F71B /* PinMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF06D512394CF8C00D6F71B /* PinMapViewController.swift */; };
 		C791728CD39A1061676EF030 /* Pods_MapKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C9CD7620F3819AA718532 /* Pods_MapKitDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		0E9AF59923942E0100F72B14 /* StoreAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAnnotationView.swift; sourceTree = "<group>"; };
 		0E9AF5A323944B7100F72B14 /* StoreCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCalloutView.xib; sourceTree = "<group>"; };
 		0EF06D482394580900D6F71B /* StoreCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCalloutView.swift; sourceTree = "<group>"; };
+		0EF06D4B2394CEEC00D6F71B /* PinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		0EF06D4D2394CF1100D6F71B /* CustomBusinessCallOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBusinessCallOut.swift; sourceTree = "<group>"; };
+		0EF06D4F2394CF4300D6F71B /* CalloutAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutAnnotationView.swift; sourceTree = "<group>"; };
+		0EF06D512394CF8C00D6F71B /* PinMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMapViewController.swift; sourceTree = "<group>"; };
 		45D5167B43B117B0F9FEB820 /* Pods_MapKitDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapKitDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DD01125ED3407EB938C380 /* Pods_MapKitDemo_MapKitDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapKitDemo_MapKitDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EE215AF3B14FB5D725981C /* Pods-MapKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			children = (
 				0E9AF590239426E400F72B14 /* Models */,
 				0E9AF587239426B800F72B14 /* Services */,
+				0EF06D4A2394CECB00D6F71B /* PinAnnotations */,
 				0E9AF59723942DDC00F72B14 /* Annotations */,
 				0E9AF557239425CA00F72B14 /* AppDelegate.swift */,
 				0E9AF585239425F600F72B14 /* MapViewController.swift */,
@@ -189,6 +198,17 @@
 				0E9AF5A323944B7100F72B14 /* StoreCalloutView.xib */,
 			);
 			path = Annotations;
+			sourceTree = "<group>";
+		};
+		0EF06D4A2394CECB00D6F71B /* PinAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				0EF06D4B2394CEEC00D6F71B /* PinAnnotation.swift */,
+				0EF06D4D2394CF1100D6F71B /* CustomBusinessCallOut.swift */,
+				0EF06D4F2394CF4300D6F71B /* CalloutAnnotationView.swift */,
+				0EF06D512394CF8C00D6F71B /* PinMapViewController.swift */,
+			);
+			path = PinAnnotations;
 			sourceTree = "<group>";
 		};
 		6A21D0E28E175C0DCCA141F3 /* Pods */ = {
@@ -391,7 +411,11 @@
 				0E9AF58E239426B800F72B14 /* HttpHelper.swift in Sources */,
 				0E9AF586239425F600F72B14 /* MapViewController.swift in Sources */,
 				0E9AF594239426E400F72B14 /* Store.swift in Sources */,
+				0EF06D4C2394CEEC00D6F71B /* PinAnnotation.swift in Sources */,
 				0EF06D492394580900D6F71B /* StoreCalloutView.swift in Sources */,
+				0EF06D4E2394CF1100D6F71B /* CustomBusinessCallOut.swift in Sources */,
+				0EF06D502394CF4300D6F71B /* CalloutAnnotationView.swift in Sources */,
+				0EF06D522394CF8C00D6F71B /* PinMapViewController.swift in Sources */,
 				0E9AF5962394273400F72B14 /* MapViewModel.swift in Sources */,
 				0E9AF59B23942E0100F72B14 /* StoreAnnotationView.swift in Sources */,
 				0E9AF558239425CA00F72B14 /* AppDelegate.swift in Sources */,

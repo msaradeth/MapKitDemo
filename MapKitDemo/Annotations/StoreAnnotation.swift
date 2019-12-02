@@ -21,8 +21,8 @@ class StoreAnnotation: NSObject, MKAnnotation {
         self.coordinate = coordinate
         self.indexPath = indexPath
         self.store = store
-        self.title = "\(store.name) Store #\(indexPath.row)"
-        self.subtitle = store.location.displayAddress.count >= 1 ? "\(store.location.displayAddress[0])" : ""
+//        self.title = "\(store.name) Store #\(indexPath.row)"
+//        self.subtitle = store.location.displayAddress.count >= 1 ? "\(store.location.displayAddress[0])" : ""
     }
 
 }

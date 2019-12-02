@@ -24,10 +24,24 @@ class StoreAnnotationView: MKAnnotationView {
     func configure(annotation: MKAnnotation?) {
         guard let annotation = annotation as? StoreAnnotation else { return }
         self.annotation = annotation
-        self.canShowCallout = false
         self.image = #imageLiteral(resourceName: "selectedLocation")
-//        self.image = isSelected ? #imageLiteral(resourceName: "selectedLocation") : #imageLiteral(resourceName: "unSelectedlocation")
+        self.canShowCallout = true
+        
+        //Add detail callout view
+        guard let calloutView = Bundle.main.loadNibNamed("StoreCalloutView", owner: self, options: nil)?.first as? StoreCalloutView else {
+            return
+        }
+        calloutView.configure(annotation: annotation)
+        detailCalloutAccessoryView = calloutView
     }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.subviews.filter { $0 is StoreCalloutView}.forEach { (calloutView) in
+//            calloutView.removeFromSuperview()
+//        }
+//    }
+
 }
 
 extension StoreAnnotationView {
