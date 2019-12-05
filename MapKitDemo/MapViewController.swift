@@ -48,16 +48,19 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: StoreAnnotationView.reuseIdentifier, for: annotation) as? StoreAnnotationView else {
-            return StoreAnnotationView(annotation: annotation, reuseIdentifier: StoreAnnotationView.reuseIdentifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: StoreAnnotationView.reuseIdentifier, for: annotation) as? StoreAnnotationView
+        if annotationView == nil {
+            annotationView = StoreAnnotationView(annotation: annotation, reuseIdentifier: StoreAnnotationView.reuseIdentifier)
         }
-        annotationView.configure(annotation: annotation)
+        annotationView?.configure(annotation: annotation, vc: self)
         return annotationView
     }
     
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//    }
-//    
-//    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-//    }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("didSelect")
+    }
+
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        print("didDeselect")
+    }
 }

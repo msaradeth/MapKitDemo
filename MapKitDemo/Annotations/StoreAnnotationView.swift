@@ -10,10 +10,8 @@ import Foundation
 import MapKit
 
 class StoreAnnotationView: MKAnnotationView {
-    
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        configure(annotation: annotation)
     }
 
     //Required for MKAnnotationView
@@ -21,7 +19,7 @@ class StoreAnnotationView: MKAnnotationView {
         super.init(coder: aDecoder)
     }
     
-    func configure(annotation: MKAnnotation?) {
+    func configure(annotation: MKAnnotation?, vc: MapViewController) {
         guard let annotation = annotation as? StoreAnnotation else { return }
         self.annotation = annotation
         self.image = #imageLiteral(resourceName: "selectedLocation")
@@ -31,17 +29,9 @@ class StoreAnnotationView: MKAnnotationView {
         guard let calloutView = Bundle.main.loadNibNamed("StoreCalloutView", owner: self, options: nil)?.first as? StoreCalloutView else {
             return
         }
-        calloutView.configure(annotation: annotation)
-        detailCalloutAccessoryView = calloutView
+        calloutView.configure(annotation: annotation, vc: vc)
+        self.detailCalloutAccessoryView = calloutView
     }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        self.subviews.filter { $0 is StoreCalloutView}.forEach { (calloutView) in
-//            calloutView.removeFromSuperview()
-//        }
-//    }
-
 }
 
 extension StoreAnnotationView {
