@@ -61,6 +61,7 @@ extension MapViewModel: LoadImageService {
 protocol LoadImageService {
     func loadImage(imageUrl: String?, completion: @escaping (UIImage?) -> Void)
 }
+
 extension LoadImageService {
     func loadImage(imageUrl: String?, completion: @escaping (UIImage?) -> Void) {
         guard let imageUrlString = imageUrl, let url = URL(string: imageUrlString) else { return }

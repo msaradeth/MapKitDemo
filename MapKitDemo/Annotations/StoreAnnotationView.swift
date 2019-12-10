@@ -19,21 +19,14 @@ class StoreAnnotationView: MKAnnotationView {
         super.init(coder: aDecoder)
     }
     
-    func configure(annotation: MKAnnotation?, vc: MapViewController) {
+    func configure(annotation: MKAnnotation?) {
         guard let annotation = annotation as? StoreAnnotation else { return }
         self.annotation = annotation
         self.image = #imageLiteral(resourceName: "selectedLocation")
         self.canShowCallout = true
-        
-        //Add detail callout view
-        guard let calloutView = Bundle.main.loadNibNamed("StoreCalloutView", owner: self, options: nil)?.first as? StoreCalloutView else {
-            return
-        }
-        calloutView.configure(annotation: annotation, vc: vc)
-        self.detailCalloutAccessoryView = calloutView
     }
 }
 
-extension StoreAnnotationView {
+extension MKAnnotationView {
     static let reuseIdentifier = String(describing: self)
 }

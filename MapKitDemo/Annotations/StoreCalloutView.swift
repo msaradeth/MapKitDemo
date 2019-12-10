@@ -16,13 +16,13 @@ class StoreCalloutView: UIView {
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var storeAddress: UILabel!
     
-    private weak var vc: MapViewController?
+    weak var delegate: MapViweVCDelegate?
     private var annotation: MKAnnotation?
     
-    func configure(annotation: MKAnnotation, vc: MapViewController) {
+    func configure(annotation: MKAnnotation, delegate: MapViweVCDelegate) {
         guard let annotation = annotation as? StoreAnnotation else { return }
         self.annotation = annotation
-        self.vc = vc
+        self.delegate = delegate
         let store = annotation.store
         imageView.image = #imageLiteral(resourceName: "more")
         storeNumber.text = "Store #\(annotation.indexPath.row)"
@@ -39,12 +39,10 @@ class StoreCalloutView: UIView {
     }
     
     @objc func onTap() {
-        print("deselectAnnotation")
-        vc?.mapView.deselectAnnotation(annotation, animated: true)
+        delegate?.mapView.deselectAnnotation(annotation, animated: true)
     }
     
     @IBAction func handleButtonSelected(_ sender: Any) {
-        print("handleButtonSelected")
-        vc?.mapView.deselectAnnotation(annotation, animated: true)
+        delegate?.mapView.deselectAnnotation(annotation, animated: true)
     }
 }

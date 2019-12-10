@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         locationService.locationManager.startUpdatingLocation()
         
+        let viewModel = MapViewModel(items: [], searchStoreService: SearchStoreService(), locationService: locationService)
+        let mapViewController = MapViewController.initFromStoryboard(viewModel: viewModel)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: mapViewController)
+        
         return true
     }
 }
